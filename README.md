@@ -3,6 +3,10 @@ Getting start in Arukas with Alpine
 
 * Arukas Website: [https://arukas.io/](https://arukas.io/en/)
 
+#### Dockerfile
+
+* https://github.com/arukasio/arukas-alpine
+
 ## Running locally
 
 #### Public key authentication
