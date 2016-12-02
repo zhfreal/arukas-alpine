@@ -1,11 +1,11 @@
-# arukas-alpine
+<img src="https://app.arukas.io/images/logo-orca.svg" alt="" width="100" /> 
+arukas-alpine
+=============
+
 Getting start in Arukas with Alpine
 
 * Arukas Website: [https://arukas.io/](https://arukas.io/en/)
-
-#### Dockerfile
-
-* https://github.com/arukasio/arukas-alpine
+* Dockerfile: https://github.com/arukasio/arukas-alpine
 
 ## Running locally
 
