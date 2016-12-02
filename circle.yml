@@ -1,0 +1,28 @@
+machine:
+  services:
+    - docker
+
+dependencies:
+  cache_directories:
+    - "~/docker"
+  override:
+    - docker info
+    - if [[ -e ~/docker/image.tar ]]; then docker load --input ~/docker/image.tar; fi
+    - docker build -t arukasio/alpine .
+    - mkdir -p ~/docker
+    - docker save arukasio/alpine > ~/docker/image.tar
+
+test:
+  override:
+    - docker run arukasio/alpine head -1 /etc/issue
+    - docker run arukasio/alpine ls -al /usr/sbin/sshd
+    - docker run arukasio/alpine ls -al entrypoint.sh
+    - docker run arukasio/alpine ls -al keygen.sh
+    - docker run arukasio/alpine ls -al pwgen.sh
+
+deployment:
+  hub:
+    branch: master
+    commands:
+      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+      - docker push arukasio/alpine
