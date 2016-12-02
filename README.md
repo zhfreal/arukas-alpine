@@ -85,4 +85,4 @@ $ docker run \
 
 ## License
 
-This project is licensed under the terms of the MIT license.
+This project is licensed under the terms of the Apache v2 license.
